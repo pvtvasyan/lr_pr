@@ -13,7 +13,7 @@ function Calculator() {
 			var arr = str.split(' '); 
 
 			if(arr.length > 3) 
-			return "Слишком много значений. Пример: \"3 + 7\""; 
+			return "Слишком много значений"; 
 				for(act in actions) { 
 				if(act == arr[1]) 
 					return actions[act](parseInt(arr[0]), parseInt(arr[2])); 
@@ -23,15 +23,13 @@ function Calculator() {
 
 
 		this.addMethod = function(name, func) { 
-
 			actions[name] = func; 
 		} 
 } 
 
 
 var calc = new Calculator;
-alert(calc.calculate("3 + 7")); // выдаст 10
-
+alert(calc.calculate("1 + 4"));
 
 
 var powerCalc = new Calculator; 
@@ -46,5 +44,5 @@ var powerCalc = new Calculator;
 		return Math.pow(a, b); 
 	}); 
 
-var res = powerCalc.calculate("2 ** 3"); 
-alert(res); // выдаст 8
+var calc2 = powerCalc.calculate("3 ** 4"); 
+alert(calc2);

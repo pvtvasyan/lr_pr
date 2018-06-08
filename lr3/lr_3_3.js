@@ -1,7 +1,14 @@
 function sum(a) {
-	return function(b) {
-		return function(c) {
-			return a+b+c;
-		}
+	var summ = a;
+
+	function f(b) {
+		summ += b;
+		return f;
 	}
+
+	f.toString = function() {
+		return summ;
+	};
+
+	return f;
 }
