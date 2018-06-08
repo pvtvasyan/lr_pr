@@ -12,6 +12,6 @@ for (i = 2, i<=10, i++) {
 
 
     if (b != 0) {
-        console.log (i);
+        alert(i);
     }
 }
